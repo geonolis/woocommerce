@@ -172,10 +172,12 @@ export default function Products( props: ProductsProps ) {
 					{ isLoading ? ' ' : title }
 				</h2>
 			) }
-			<div className="woocommerce-marketplace__sub-header">
-				{ props.categorySelector && (
-					<CategorySelector type={ props.type } />
-				) }
+			<nav className="woocommerce-marketplace__sub-header">
+				<div className="woocommerce-marketplace__sub-header__categories">
+					{ props.categorySelector && (
+						<CategorySelector type={ props.type } />
+					) }
+				</div>
 				{ props.type === 'theme' && (
 					<Button
 						className="woocommerce-marketplace__customize-your-store-button"
@@ -192,7 +194,7 @@ export default function Products( props: ProductsProps ) {
 						} }
 					/>
 				) }
-			</div>
+			</nav>
 			{ isModalOpen && (
 				<ThemeSwitchWarningModal
 					setIsModalOpen={ setIsModalOpen }
